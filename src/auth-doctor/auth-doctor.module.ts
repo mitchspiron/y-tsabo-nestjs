@@ -9,4 +9,4 @@ import { AtStrategy, RtStrategy } from './strategies';
   controllers: [AuthDoctorController],
   providers: [AuthDoctorService, AtStrategy, RtStrategy],
 })
-export class AuthModule {}
+export class AuthDoctorModule {}

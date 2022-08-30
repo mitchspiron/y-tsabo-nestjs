@@ -6,20 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthDoctorModule = void 0;
+exports.DoctorModule = void 0;
 const common_1 = require("@nestjs/common");
-const jwt_1 = require("@nestjs/jwt");
-const auth_doctor_controller_1 = require("./auth-doctor.controller");
-const auth_doctor_service_1 = require("./auth-doctor.service");
-const strategies_1 = require("./strategies");
-let AuthDoctorModule = class AuthDoctorModule {
+const doctor_controller_1 = require("./doctor.controller");
+const doctor_service_1 = require("./doctor.service");
+let DoctorModule = class DoctorModule {
 };
-AuthDoctorModule = __decorate([
+DoctorModule = __decorate([
     (0, common_1.Module)({
-        imports: [jwt_1.JwtModule.register({})],
-        controllers: [auth_doctor_controller_1.AuthDoctorController],
-        providers: [auth_doctor_service_1.AuthDoctorService, strategies_1.AtStrategy, strategies_1.RtStrategy],
+        imports: [],
+        controllers: [doctor_controller_1.DoctorController],
+        providers: [doctor_service_1.DoctorService],
     })
-], AuthDoctorModule);
-exports.AuthDoctorModule = AuthDoctorModule;
-//# sourceMappingURL=auth-doctor.module.js.map
+], DoctorModule);
+exports.DoctorModule = DoctorModule;
+//# sourceMappingURL=doctor.module.js.map

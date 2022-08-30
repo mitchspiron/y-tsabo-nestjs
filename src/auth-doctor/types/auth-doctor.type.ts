@@ -3,17 +3,6 @@ export type Tokens = {
   refresh_token: string;
 };
 
-export type Doctor = {
-  idDoctor: number;
-  lastnameDoctor: string;
-  firstnameDoctor: string;
-  mailDoctor: string;
-  phoneDoctor: string;
-  addressDoctor: string;
-  speciality: number;
-  passwordDoctor: string;
-};
-
 export type DoctorTokens = [
   {
     idDoctor: number;

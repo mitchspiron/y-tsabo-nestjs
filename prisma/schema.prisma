@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model appointment {
+  idAppointment                Int      @id @default(autoincrement())
+  dateAppointment              DateTime @db.DateTime(0)
+  timeAppointment              DateTime @db.DateTime(0)
+  patient                      Int
+  doctor                       Int
+  isValid                      Boolean
+  doctor_appointmentTodoctor   doctor   @relation(fields: [doctor], references: [idDoctor], onDelete: Cascade, map: "appointment_ibfk_1")
+  patient_appointmentTopatient patient  @relation(fields: [patient], references: [idPatient], onDelete: Cascade, map: "appointment_ibfk_2")
+
+  @@index([doctor], map: "doctor")
+  @@index([patient], map: "patient")
+}
+
+model disease {
+  idDisease      Int         @id @default(autoincrement())
+  nameDisease    String
+  detailsDisease String
+  treatment      treatment[]
+}
+
+model doctor {
+  idDoctor         Int              @id @default(autoincrement())
+  lastnameDoctor   String
+  firstnameDoctor  String
+  emailDoctor      String           @unique(map: "emailDoctor")
+  phoneDoctor      String
+  addressDoctor    String
+  speciality       Int
+  passwordDoctor   String
+  rtDoctor         String?
+  doctorspeciality doctorspeciality @relation(fields: [speciality], references: [idSpeciality], onDelete: Cascade, map: "doctor_ibfk_1")
+  appointment      appointment[]
+  treatment        treatment[]
+
+  @@index([speciality], map: "speciality")
+}
+
+model doctorspeciality {
+  idSpeciality   Int      @id @default(autoincrement())
+  nameSpeciality String
+  doctor         doctor[]
+}
+
+model patient {
+  idPatient        Int           @id @default(autoincrement())
+  lastnamePatient  String
+  firstnamePatient String
+  emailPatient     String        @unique(map: "emailPatient")
+  phonePatient     String
+  addressPatient   String
+  passwordPatient  String
+  rtPatient        String
+  appointment      appointment[]
+  treatment        treatment[]
+}
+
+model treatment {
+  idTreatment                Int      @id @default(autoincrement())
+  dateTreatment              DateTime @db.DateTime(0)
+  patient                    Int
+  doctor                     Int
+  disease                    Int
+  isTreated                  Boolean
+  doctor_doctorTotreatment   doctor   @relation(fields: [doctor], references: [idDoctor], onDelete: Cascade, map: "treatment_ibfk_1")
+  disease_diseaseTotreatment disease  @relation(fields: [disease], references: [idDisease], onDelete: Cascade, map: "treatment_ibfk_2")
+  patient_patientTotreatment patient  @relation(fields: [patient], references: [idPatient], onDelete: Cascade, map: "treatment_ibfk_4")
+
+  @@index([disease], map: "disease")
+  @@index([doctor], map: "doctor")
+  @@index([patient], map: "patient")
+}

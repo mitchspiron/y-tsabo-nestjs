@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
-import { AuthPatientController } from './auth-doctor.controller';
-import { AuthPatientService } from './auth-doctor.service';
+import { AuthPatientController } from './auth-patient.controller';
+import { AuthPatientService } from './auth-patient.service';
 import { AtStrategy, RtStrategy } from './strategies';
 
 @Module({

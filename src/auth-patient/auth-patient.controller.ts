@@ -12,7 +12,7 @@ import {
   Public,
 } from '../common/decorators';
 import { RtGuard } from '../common/guards';
-import { AuthPatientService } from './auth-doctor.service';
+import { AuthPatientService } from './auth-patient.service';
 import { AuthPatientDtoSignin, AuthPatientDtoSignup } from './dto';
 import { PatientTokens, Tokens } from './types';
 

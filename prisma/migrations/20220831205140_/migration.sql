@@ -1,8 +1,8 @@
 -- CreateTable
 CREATE TABLE `appointment` (
     `idAppointment` INTEGER NOT NULL AUTO_INCREMENT,
-    `dateAppointment` DATETIME(0) NOT NULL,
-    `timeAppointment` DATETIME(0) NOT NULL,
+    `dateAppointment` DATE NOT NULL,
+    `timeAppointment` TIME NOT NULL,
     `patient` INTEGER NOT NULL,
     `doctor` INTEGER NOT NULL,
     `isValid` BOOLEAN NOT NULL,
@@ -64,7 +64,7 @@ CREATE TABLE `patient` (
 -- CreateTable
 CREATE TABLE `treatment` (
     `idTreatment` INTEGER NOT NULL AUTO_INCREMENT,
-    `dateTreatment` DATETIME(0) NOT NULL,
+    `dateTreatment` DATE NOT NULL,
     `patient` INTEGER NOT NULL,
     `doctor` INTEGER NOT NULL,
     `disease` INTEGER NOT NULL,

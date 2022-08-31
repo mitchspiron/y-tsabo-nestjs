@@ -12,8 +12,8 @@ datasource db {
 
 model appointment {
   idAppointment                Int      @id @default(autoincrement())
-  dateAppointment              DateTime @db.DateTime(0)
-  timeAppointment              DateTime @db.DateTime(0)
+  dateAppointment              DateTime @db.Date
+  timeAppointment              DateTime @db.Time
   patient                      Int
   doctor                       Int
   isValid                      Boolean
@@ -69,7 +69,7 @@ model patient {
 
 model treatment {
   idTreatment                Int      @id @default(autoincrement())
-  dateTreatment              DateTime @db.DateTime(0)
+  dateTreatment              DateTime @db.Date()
   patient                    Int
   doctor                     Int
   disease                    Int

@@ -4,6 +4,7 @@ import { AuthDoctorModule } from './auth-doctor/auth-doctor.module';
 import { AuthPatientModule } from './auth-patient/auth-patient.module';
 import { AtGuard } from './common/guards';
 import { DiseaseModule } from './disease/disease.module';
+import { DoctorSpecialityModule } from './doctor-speciality/doctor-speciality.module';
 import { DoctorModule } from './doctor/doctor.module';
 import { PatientModule } from './patient/patient.module';
 import { PrismaModule } from './prisma/prisma.module';
@@ -16,6 +17,7 @@ import { PrismaModule } from './prisma/prisma.module';
     AuthPatientModule,
     PatientModule,
     DiseaseModule,
+    DoctorSpecialityModule,
   ],
   providers: [
     {

@@ -7,6 +7,8 @@ export declare class DoctorService {
     getDoctorById(id: number): Promise<Doctor | null>;
     getDoctors(): Promise<import(".prisma/client").doctor[]>;
     updateDoctorById(id: number, dto: DoctorDto): Promise<Doctor>;
+    hashData(data: string): Promise<string>;
+    getPasswordDoctorById(id: number): Promise<DoctorPassword | null>;
     updateDoctorPassword(id: number, dto: DoctorPasswordDto): Promise<DoctorPassword>;
-    deleteBookById(id: number): Promise<Doctor>;
+    deleteDoctorById(id: number): Promise<Doctor>;
 }

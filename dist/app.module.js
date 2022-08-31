@@ -10,7 +10,7 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const core_1 = require("@nestjs/core");
 const auth_doctor_module_1 = require("./auth-doctor/auth-doctor.module");
-const auth_doctor_module_2 = require("./auth-patient/auth-doctor.module");
+const auth_patient_module_1 = require("./auth-patient/auth-patient.module");
 const guards_1 = require("./common/guards");
 const doctor_module_1 = require("./doctor/doctor.module");
 const patient_module_1 = require("./patient/patient.module");
@@ -23,7 +23,7 @@ AppModule = __decorate([
             auth_doctor_module_1.AuthDoctorModule,
             prisma_module_1.PrismaModule,
             doctor_module_1.DoctorModule,
-            auth_doctor_module_2.AuthPatientModule,
+            auth_patient_module_1.AuthPatientModule,
             patient_module_1.PatientModule,
         ],
         providers: [

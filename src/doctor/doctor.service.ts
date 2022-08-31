@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { DoctorDto, DoctorPasswordDto } from './dto';
 import { Doctor, DoctorPassword } from './types';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class DoctorService {
@@ -35,13 +36,29 @@ export class DoctorService {
     });
   }
 
+  hashData(data: string) {
+    return bcrypt.hash(data, 10);
+  }
+
+  async getPasswordDoctorById(id: number): Promise<DoctorPassword | null> {
+    return await this.prisma.doctor.findUnique({
+      where: {
+        idDoctor: Number(id),
+      },
+      select: {
+        passwordDoctor: true,
+      },
+    });
+  }
+
   async updateDoctorPassword(
     id: number,
     dto: DoctorPasswordDto,
   ): Promise<DoctorPassword> {
+    const hash = await this.hashData(dto.passwordDoctor);
     return await this.prisma.doctor.update({
       data: {
-        passwordDoctor: dto.passwordDoctor,
+        passwordDoctor: hash,
       },
       where: {
         idDoctor: Number(id),
@@ -49,7 +66,7 @@ export class DoctorService {
     });
   }
 
-  async deleteBookById(id: number): Promise<Doctor> {
+  async deleteDoctorById(id: number): Promise<Doctor> {
     return await this.prisma.doctor.delete({
       where: {
         idDoctor: Number(id),

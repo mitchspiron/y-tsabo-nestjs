@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DoctorService = void 0;
 const common_1 = require("@nestjs/common");
 const prisma_service_1 = require("../prisma/prisma.service");
+const bcrypt = require("bcrypt");
 let DoctorService = class DoctorService {
     constructor(prisma) {
         this.prisma = prisma;
@@ -41,17 +42,31 @@ let DoctorService = class DoctorService {
             },
         });
     }
+    hashData(data) {
+        return bcrypt.hash(data, 10);
+    }
+    async getPasswordDoctorById(id) {
+        return await this.prisma.doctor.findUnique({
+            where: {
+                idDoctor: Number(id),
+            },
+            select: {
+                passwordDoctor: true,
+            },
+        });
+    }
     async updateDoctorPassword(id, dto) {
+        const hash = await this.hashData(dto.passwordDoctor);
         return await this.prisma.doctor.update({
             data: {
-                passwordDoctor: dto.passwordDoctor,
+                passwordDoctor: hash,
             },
             where: {
                 idDoctor: Number(id),
             },
         });
     }
-    async deleteBookById(id) {
+    async deleteDoctorById(id) {
         return await this.prisma.doctor.delete({
             where: {
                 idDoctor: Number(id),

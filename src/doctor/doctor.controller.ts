@@ -12,6 +12,13 @@ export class DoctorController {
     return await this.doctorService.getDoctors();
   }
 
+  @Get('patient/password/:id')
+  async getPasswordDoctorById(
+    @Param('id') id: number,
+  ): Promise<DoctorPassword> {
+    return await this.doctorService.getPasswordDoctorById(id);
+  }
+
   @Get('doctor/:id')
   async getDoctorById(@Param('id') id: number): Promise<Doctor> {
     return await this.doctorService.getDoctorById(id);
@@ -34,7 +41,7 @@ export class DoctorController {
   }
 
   @Delete('doctor/:id')
-  async deleteBookById(@Param('id') id: number): Promise<Doctor> {
-    return this.doctorService.deleteBookById(id);
+  async deleteDoctorById(@Param('id') id: number): Promise<Doctor> {
+    return this.doctorService.deleteDoctorById(id);
   }
 }

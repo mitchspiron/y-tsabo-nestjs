@@ -23,6 +23,9 @@ let DoctorController = class DoctorController {
     async getDoctors() {
         return await this.doctorService.getDoctors();
     }
+    async getPasswordDoctorById(id) {
+        return await this.doctorService.getPasswordDoctorById(id);
+    }
     async getDoctorById(id) {
         return await this.doctorService.getDoctorById(id);
     }
@@ -32,8 +35,8 @@ let DoctorController = class DoctorController {
     async updateDoctorPassword(id, dto) {
         return this.doctorService.updateDoctorPassword(id, dto);
     }
-    async deleteBookById(id) {
-        return this.doctorService.deleteBookById(id);
+    async deleteDoctorById(id) {
+        return this.doctorService.deleteDoctorById(id);
     }
 };
 __decorate([
@@ -42,6 +45,13 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], DoctorController.prototype, "getDoctors", null);
+__decorate([
+    (0, common_1.Get)('patient/password/:id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], DoctorController.prototype, "getPasswordDoctorById", null);
 __decorate([
     (0, common_1.Get)('doctor/:id'),
     __param(0, (0, common_1.Param)('id')),
@@ -71,7 +81,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
-], DoctorController.prototype, "deleteBookById", null);
+], DoctorController.prototype, "deleteDoctorById", null);
 DoctorController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [doctor_service_1.DoctorService])

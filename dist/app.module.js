@@ -13,12 +13,19 @@ const auth_doctor_module_1 = require("./auth-doctor/auth-doctor.module");
 const auth_doctor_module_2 = require("./auth-patient/auth-doctor.module");
 const guards_1 = require("./common/guards");
 const doctor_module_1 = require("./doctor/doctor.module");
+const patient_module_1 = require("./patient/patient.module");
 const prisma_module_1 = require("./prisma/prisma.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [auth_doctor_module_1.AuthDoctorModule, prisma_module_1.PrismaModule, doctor_module_1.DoctorModule, auth_doctor_module_2.AuthPatientModule],
+        imports: [
+            auth_doctor_module_1.AuthDoctorModule,
+            prisma_module_1.PrismaModule,
+            doctor_module_1.DoctorModule,
+            auth_doctor_module_2.AuthPatientModule,
+            patient_module_1.PatientModule,
+        ],
         providers: [
             {
                 provide: core_1.APP_GUARD,

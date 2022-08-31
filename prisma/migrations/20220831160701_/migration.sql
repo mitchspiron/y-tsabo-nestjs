@@ -55,7 +55,7 @@ CREATE TABLE `patient` (
     `phonePatient` VARCHAR(191) NOT NULL,
     `addressPatient` VARCHAR(191) NOT NULL,
     `passwordPatient` VARCHAR(191) NOT NULL,
-    `rtPatient` VARCHAR(191) NOT NULL,
+    `rtPatient` VARCHAR(191) NULL,
 
     UNIQUE INDEX `emailPatient`(`emailPatient`),
     PRIMARY KEY (`idPatient`)

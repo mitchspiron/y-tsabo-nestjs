@@ -62,7 +62,7 @@ model patient {
   phonePatient     String
   addressPatient   String
   passwordPatient  String
-  rtPatient        String
+  rtPatient        String?
   appointment      appointment[]
   treatment        treatment[]
 }

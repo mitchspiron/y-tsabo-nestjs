@@ -24,6 +24,7 @@ CREATE TABLE `disease` (
 -- CreateTable
 CREATE TABLE `doctor` (
     `idDoctor` INTEGER NOT NULL AUTO_INCREMENT,
+    `matriculeDoctor` VARCHAR(191) NOT NULL,
     `lastnameDoctor` VARCHAR(191) NOT NULL,
     `firstnameDoctor` VARCHAR(191) NOT NULL,
     `emailDoctor` VARCHAR(191) NOT NULL,
@@ -54,6 +55,8 @@ CREATE TABLE `patient` (
     `emailPatient` VARCHAR(191) NOT NULL,
     `phonePatient` VARCHAR(191) NOT NULL,
     `addressPatient` VARCHAR(191) NOT NULL,
+    `sexePatient` VARCHAR(191) NOT NULL,
+    `agePatient` INTEGER NOT NULL,
     `passwordPatient` VARCHAR(191) NOT NULL,
     `rtPatient` VARCHAR(191) NULL,
 

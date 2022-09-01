@@ -33,7 +33,7 @@ model disease {
 
 model doctor {
   idDoctor         Int              @id @default(autoincrement())
-  matriculeDoctor  String
+  matriculeDoctor  String           @unique(map: "matriculeDoctor")
   lastnameDoctor   String
   firstnameDoctor  String
   emailDoctor      String           @unique(map: "emailDoctor")

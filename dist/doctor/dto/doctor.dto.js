@@ -17,6 +17,11 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
+], DoctorDto.prototype, "matriculeDoctor", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
 ], DoctorDto.prototype, "lastnameDoctor", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),

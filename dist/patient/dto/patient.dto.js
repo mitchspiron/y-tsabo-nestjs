@@ -38,6 +38,15 @@ __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], PatientDto.prototype, "addressPatient", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], PatientDto.prototype, "sexePatient", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", Number)
+], PatientDto.prototype, "agePatient", void 0);
 exports.PatientDto = PatientDto;
 class PatientPasswordDto {
 }

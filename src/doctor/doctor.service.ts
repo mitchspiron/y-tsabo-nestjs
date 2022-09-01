@@ -23,6 +23,7 @@ export class DoctorService {
   async updateDoctorById(id: number, dto: DoctorDto): Promise<Doctor> {
     return await this.prisma.doctor.update({
       data: {
+        matriculeDoctor: dto.matriculeDoctor,
         lastnameDoctor: dto.lastnameDoctor,
         firstnameDoctor: dto.firstnameDoctor,
         emailDoctor: dto.emailDoctor,

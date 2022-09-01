@@ -24,6 +24,7 @@ let AuthDoctorService = class AuthDoctorService {
         const speciality = Number(dto.speciality);
         const newDoctor = await this.prisma.doctor.create({
             data: {
+                matriculeDoctor: dto.matriculeDoctor,
                 lastnameDoctor: dto.lastnameDoctor,
                 firstnameDoctor: dto.firstnameDoctor,
                 emailDoctor: dto.emailDoctor,

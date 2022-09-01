@@ -23,6 +23,13 @@ export class AuthPatientDtoSignup {
 
   @IsNotEmpty()
   @IsString()
+  sexePatient: string;
+
+  @IsNotEmpty()
+  agePatient: number;
+
+  @IsNotEmpty()
+  @IsString()
   passwordPatient: string;
 }
 

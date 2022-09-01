@@ -5,6 +5,7 @@ export declare type Tokens = {
 export declare type DoctorTokens = [
     {
         idDoctor: number;
+        matriculeDoctor: string;
         lastnameDoctor: string;
         firstnameDoctor: string;
         emailDoctor: string;

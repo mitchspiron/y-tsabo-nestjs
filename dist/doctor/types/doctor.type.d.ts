@@ -1,4 +1,5 @@
 export declare type Doctor = {
+    matriculeDoctor: string;
     idDoctor: number;
     lastnameDoctor: string;
     firstnameDoctor: string;

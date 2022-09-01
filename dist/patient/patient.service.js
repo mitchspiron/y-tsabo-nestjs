@@ -35,6 +35,8 @@ let PatientService = class PatientService {
                 emailPatient: dto.emailPatient,
                 phonePatient: dto.phonePatient,
                 addressPatient: dto.addressPatient,
+                sexePatient: dto.sexePatient,
+                agePatient: Number(dto.agePatient),
             },
             where: {
                 idPatient: Number(id),

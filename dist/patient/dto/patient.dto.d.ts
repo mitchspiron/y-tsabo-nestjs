@@ -4,6 +4,8 @@ export declare class PatientDto {
     emailPatient: string;
     phonePatient: string;
     addressPatient: string;
+    sexePatient: string;
+    agePatient: number;
 }
 export declare class PatientPasswordDto {
     passwordPatient: string;

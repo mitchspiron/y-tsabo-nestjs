@@ -11,6 +11,8 @@ export type PatientTokens = [
     emailPatient: string;
     phonePatient: string;
     addressPatient: string;
+    sexePatient: string;
+    agePatient: number;
     passwordPatient: string;
   },
   {

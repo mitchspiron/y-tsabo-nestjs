@@ -6,6 +6,7 @@ export type Tokens = {
 export type DoctorTokens = [
   {
     idDoctor: number;
+    matriculeDoctor: string;
     lastnameDoctor: string;
     firstnameDoctor: string;
     emailDoctor: string;

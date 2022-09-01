@@ -34,6 +34,7 @@ CREATE TABLE `doctor` (
     `passwordDoctor` VARCHAR(191) NOT NULL,
     `rtDoctor` VARCHAR(191) NULL,
 
+    UNIQUE INDEX `matriculeDoctor`(`matriculeDoctor`),
     UNIQUE INDEX `emailDoctor`(`emailDoctor`),
     INDEX `speciality`(`speciality`),
     PRIMARY KEY (`idDoctor`)

@@ -1,4 +1,5 @@
 export declare class DoctorDto {
+    matriculeDoctor: string;
     lastnameDoctor: string;
     firstnameDoctor: string;
     emailDoctor: string;

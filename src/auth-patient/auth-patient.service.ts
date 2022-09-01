@@ -18,6 +18,8 @@ export class AuthPatientService {
         emailPatient: dto.emailPatient,
         phonePatient: dto.phonePatient,
         addressPatient: dto.addressPatient,
+        sexePatient: dto.sexePatient,
+        agePatient: Number(dto.agePatient),
         passwordPatient: hash,
       },
     });

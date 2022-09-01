@@ -1,4 +1,5 @@
 export declare class AuthDoctorDtoSignup {
+    matriculeDoctor: string;
     lastnameDoctor: string;
     firstnameDoctor: string;
     emailDoctor: string;

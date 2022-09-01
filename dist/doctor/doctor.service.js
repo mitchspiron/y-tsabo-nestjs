@@ -30,6 +30,7 @@ let DoctorService = class DoctorService {
     async updateDoctorById(id, dto) {
         return await this.prisma.doctor.update({
             data: {
+                matriculeDoctor: dto.matriculeDoctor,
                 lastnameDoctor: dto.lastnameDoctor,
                 firstnameDoctor: dto.firstnameDoctor,
                 emailDoctor: dto.emailDoctor,

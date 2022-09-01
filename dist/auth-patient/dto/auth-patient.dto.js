@@ -42,6 +42,15 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
+], AuthPatientDtoSignup.prototype, "sexePatient", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", Number)
+], AuthPatientDtoSignup.prototype, "agePatient", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
 ], AuthPatientDtoSignup.prototype, "passwordPatient", void 0);
 exports.AuthPatientDtoSignup = AuthPatientDtoSignup;
 class AuthPatientDtoSignin {

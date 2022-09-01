@@ -4,6 +4,8 @@ export declare class AuthPatientDtoSignup {
     emailPatient: string;
     phonePatient: string;
     addressPatient: string;
+    sexePatient: string;
+    agePatient: number;
     passwordPatient: string;
 }
 export declare class AuthPatientDtoSignin {

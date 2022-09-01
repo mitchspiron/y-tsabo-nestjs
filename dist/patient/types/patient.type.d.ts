@@ -5,6 +5,8 @@ export declare type Patient = {
     emailPatient: string;
     phonePatient: string;
     addressPatient: string;
+    sexePatient: string;
+    agePatient: number;
 };
 export declare type PatientPassword = {
     passwordPatient: string;

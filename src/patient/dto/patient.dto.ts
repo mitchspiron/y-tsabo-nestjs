@@ -20,6 +20,13 @@ export class PatientDto {
   @IsNotEmpty()
   @IsString()
   addressPatient: string;
+
+  @IsNotEmpty()
+  @IsString()
+  sexePatient: string;
+
+  @IsNotEmpty()
+  agePatient: number;
 }
 
 export class PatientPasswordDto {

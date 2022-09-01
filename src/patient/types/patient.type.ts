@@ -5,6 +5,8 @@ export type Patient = {
   emailPatient: string;
   phonePatient: string;
   addressPatient: string;
+  sexePatient: string;
+  agePatient: number;
 };
 
 export type PatientPassword = {

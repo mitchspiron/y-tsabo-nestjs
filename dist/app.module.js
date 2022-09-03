@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const core_1 = require("@nestjs/core");
+const appointment_module_1 = require("./appointment/appointment.module");
 const auth_doctor_module_1 = require("./auth-doctor/auth-doctor.module");
 const auth_patient_module_1 = require("./auth-patient/auth-patient.module");
 const guards_1 = require("./common/guards");
@@ -29,6 +30,7 @@ AppModule = __decorate([
             patient_module_1.PatientModule,
             disease_module_1.DiseaseModule,
             doctor_speciality_module_1.DoctorSpecialityModule,
+            appointment_module_1.AppointmentModule,
         ],
         providers: [
             {

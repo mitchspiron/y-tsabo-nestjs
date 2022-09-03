@@ -11,6 +11,16 @@ export class AuthPatientService {
 
   async signupLocal(dto: AuthPatientDtoSignup): Promise<PatientTokens> {
     const hash = await this.hashData(dto.passwordPatient);
+
+    const patientEmail = await this.prisma.patient.findUnique({
+      where: {
+        emailPatient: dto.emailPatient,
+      },
+    });
+
+    if (patientEmail)
+      throw new ForbiddenException('This email belongs to an existing patient');
+
     const newPatient = await this.prisma.patient.create({
       data: {
         lastnamePatient: dto.lastnamePatient,

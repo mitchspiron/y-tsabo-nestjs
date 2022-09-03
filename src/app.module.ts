@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { APP_GUARD } from '@nestjs/core';
+import { AppointmentModule } from './appointment/appointment.module';
 import { AuthDoctorModule } from './auth-doctor/auth-doctor.module';
 import { AuthPatientModule } from './auth-patient/auth-patient.module';
 import { AtGuard } from './common/guards';
@@ -18,6 +19,7 @@ import { PrismaModule } from './prisma/prisma.module';
     PatientModule,
     DiseaseModule,
     DoctorSpecialityModule,
+    AppointmentModule,
   ],
   providers: [
     {

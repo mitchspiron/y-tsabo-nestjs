@@ -22,6 +22,18 @@ let AuthDoctorService = class AuthDoctorService {
     async signupLocal(dto) {
         const hash = await this.hashData(dto.passwordDoctor);
         const speciality = Number(dto.speciality);
+        const doctorMatricule = await this.prisma.doctor.findUnique({
+            where: {
+                matriculeDoctor: dto.matriculeDoctor,
+            },
+        });
+        const doctorEmail = await this.prisma.doctor.findUnique({
+            where: {
+                emailDoctor: dto.emailDoctor,
+            },
+        });
+        if (doctorEmail || doctorMatricule)
+            throw new common_1.ForbiddenException('This matricule or email belongs to an existing doctor');
         const newDoctor = await this.prisma.doctor.create({
             data: {
                 matriculeDoctor: dto.matriculeDoctor,

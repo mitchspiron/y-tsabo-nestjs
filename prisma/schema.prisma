@@ -12,8 +12,8 @@ datasource db {
 
 model appointment {
   idAppointment                Int      @id @default(autoincrement())
-  dateAppointment              DateTime @db.Date
-  timeAppointment              DateTime @db.Time
+  dateAppointment              String
+  timeAppointment              String
   patient                      Int
   doctor                       Int
   isValid                      Boolean

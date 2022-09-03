@@ -38,6 +38,13 @@ export class AppointmentController {
     return this.appointmentService.updateAppointmentById(id, dto);
   }
 
+  @Put('appointment/valid/:id')
+  async updateAppointmentStateToValid(
+    @Param('id') id: number,
+  ): Promise<Appointment> {
+    return this.appointmentService.updateAppointmentStateToValid(id);
+  }
+
   @Delete('appointment/:id')
   async deleteAppointmentById(@Param('id') id: number): Promise<Appointment> {
     return this.appointmentService.deleteAppointmentById(id);

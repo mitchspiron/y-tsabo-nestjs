@@ -6,10 +6,6 @@ export declare class AppointmentController {
     constructor(appointmentService: AppointmentService);
     createAppointment(dto: AppointmentDto): Promise<Appointment>;
     getAppointmentPatientById(id: number): Promise<{
-        idAppointment: number;
-        dateAppointment: string;
-        timeAppointment: string;
-        isValid: boolean;
         doctor_appointmentTodoctor: {
             idDoctor: number;
             lastnameDoctor: string;
@@ -17,9 +13,12 @@ export declare class AppointmentController {
             emailDoctor: string;
             phoneDoctor: string;
         };
+        dateAppointment: string;
+        timeAppointment: string;
+        isValid: boolean;
+        idAppointment: number;
     }[]>;
     getAppointmentByDoctorId(id: number): Promise<{
-        idAppointment: number;
         dateAppointment: string;
         timeAppointment: string;
         isValid: boolean;
@@ -30,7 +29,9 @@ export declare class AppointmentController {
             emailPatient: string;
             phonePatient: string;
         };
+        idAppointment: number;
     }[]>;
     updateAppointmentById(id: number, dto: AppointmentDto): Promise<Appointment>;
+    updateAppointmentStateToValid(id: number): Promise<Appointment>;
     deleteAppointmentById(id: number): Promise<Appointment>;
 }

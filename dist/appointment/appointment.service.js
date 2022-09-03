@@ -84,7 +84,16 @@ let AppointmentService = class AppointmentService {
                 timeAppointment: dto.timeAppointment,
                 patient: Number(dto.patient),
                 doctor: Number(dto.doctor),
-                isValid: dto.isValid,
+            },
+            where: {
+                idAppointment: Number(id),
+            },
+        });
+    }
+    async updateAppointmentStateToValid(id) {
+        return await this.prisma.appointment.update({
+            data: {
+                isValid: true,
             },
             where: {
                 idAppointment: Number(id),

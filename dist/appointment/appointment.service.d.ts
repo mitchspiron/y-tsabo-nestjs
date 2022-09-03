@@ -6,8 +6,6 @@ export declare class AppointmentService {
     constructor(prisma: PrismaService);
     createAppointment(dto: AppointmentDto): Promise<Appointment>;
     getAppointmentPatientById(id: number): Promise<{
-        dateAppointment: string;
-        timeAppointment: string;
         doctor_appointmentTodoctor: {
             idDoctor: number;
             lastnameDoctor: string;
@@ -15,6 +13,8 @@ export declare class AppointmentService {
             emailDoctor: string;
             phoneDoctor: string;
         };
+        dateAppointment: string;
+        timeAppointment: string;
         isValid: boolean;
         idAppointment: number;
     }[]>;
@@ -32,5 +32,6 @@ export declare class AppointmentService {
         idAppointment: number;
     }[]>;
     updateAppointmentById(id: number, dto: AppointmentDto): Promise<Appointment>;
+    updateAppointmentStateToValid(id: number): Promise<Appointment>;
     deleteAppointmentById(id: number): Promise<Appointment>;
 }

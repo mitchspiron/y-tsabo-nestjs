@@ -32,6 +32,9 @@ let AppointmentController = class AppointmentController {
     async updateAppointmentById(id, dto) {
         return this.appointmentService.updateAppointmentById(id, dto);
     }
+    async updateAppointmentStateToValid(id) {
+        return this.appointmentService.updateAppointmentStateToValid(id);
+    }
     async deleteAppointmentById(id) {
         return this.appointmentService.deleteAppointmentById(id);
     }
@@ -65,6 +68,13 @@ __decorate([
     __metadata("design:paramtypes", [Number, dto_1.AppointmentDto]),
     __metadata("design:returntype", Promise)
 ], AppointmentController.prototype, "updateAppointmentById", null);
+__decorate([
+    (0, common_1.Put)('appointment/valid/:id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], AppointmentController.prototype, "updateAppointmentStateToValid", null);
 __decorate([
     (0, common_1.Delete)('appointment/:id'),
     __param(0, (0, common_1.Param)('id')),

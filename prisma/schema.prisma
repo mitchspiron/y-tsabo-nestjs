@@ -11,14 +11,14 @@ datasource db {
 }
 
 model appointment {
-  idAppointment                Int      @id @default(autoincrement())
+  idAppointment                Int     @id @default(autoincrement())
   dateAppointment              String
   timeAppointment              String
   patient                      Int
   doctor                       Int
   isValid                      Boolean
-  doctor_appointmentTodoctor   doctor   @relation(fields: [doctor], references: [idDoctor], onDelete: Cascade, map: "appointment_ibfk_1")
-  patient_appointmentTopatient patient  @relation(fields: [patient], references: [idPatient], onDelete: Cascade, map: "appointment_ibfk_2")
+  doctor_appointmentTodoctor   doctor  @relation(fields: [doctor], references: [idDoctor], onDelete: Cascade, map: "appointment_ibfk_1")
+  patient_appointmentTopatient patient @relation(fields: [patient], references: [idPatient], onDelete: Cascade, map: "appointment_ibfk_2")
 
   @@index([doctor], map: "doctor")
   @@index([patient], map: "patient")
@@ -71,15 +71,15 @@ model patient {
 }
 
 model treatment {
-  idTreatment                Int      @id @default(autoincrement())
-  dateTreatment              DateTime @db.Date()
+  idTreatment                Int     @id @default(autoincrement())
+  dateTreatment              String
   patient                    Int
   doctor                     Int
   disease                    Int
   isTreated                  Boolean
-  doctor_doctorTotreatment   doctor   @relation(fields: [doctor], references: [idDoctor], onDelete: Cascade, map: "treatment_ibfk_1")
-  disease_diseaseTotreatment disease  @relation(fields: [disease], references: [idDisease], onDelete: Cascade, map: "treatment_ibfk_2")
-  patient_patientTotreatment patient  @relation(fields: [patient], references: [idPatient], onDelete: Cascade, map: "treatment_ibfk_4")
+  doctor_doctorTotreatment   doctor  @relation(fields: [doctor], references: [idDoctor], onDelete: Cascade, map: "treatment_ibfk_1")
+  disease_diseaseTotreatment disease @relation(fields: [disease], references: [idDisease], onDelete: Cascade, map: "treatment_ibfk_2")
+  patient_patientTotreatment patient @relation(fields: [patient], references: [idPatient], onDelete: Cascade, map: "treatment_ibfk_4")
 
   @@index([disease], map: "disease")
   @@index([doctor], map: "doctor")

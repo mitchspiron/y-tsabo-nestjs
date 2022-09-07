@@ -18,6 +18,7 @@ const doctor_speciality_module_1 = require("./doctor-speciality/doctor-specialit
 const doctor_module_1 = require("./doctor/doctor.module");
 const patient_module_1 = require("./patient/patient.module");
 const prisma_module_1 = require("./prisma/prisma.module");
+const treatment_module_1 = require("./treatment/treatment.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -31,6 +32,7 @@ AppModule = __decorate([
             disease_module_1.DiseaseModule,
             doctor_speciality_module_1.DoctorSpecialityModule,
             appointment_module_1.AppointmentModule,
+            treatment_module_1.TreatmentModule,
         ],
         providers: [
             {

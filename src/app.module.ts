@@ -9,6 +9,7 @@ import { DoctorSpecialityModule } from './doctor-speciality/doctor-speciality.mo
 import { DoctorModule } from './doctor/doctor.module';
 import { PatientModule } from './patient/patient.module';
 import { PrismaModule } from './prisma/prisma.module';
+import { TreatmentModule } from './treatment/treatment.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { PrismaModule } from './prisma/prisma.module';
     DiseaseModule,
     DoctorSpecialityModule,
     AppointmentModule,
+    TreatmentModule,
   ],
   providers: [
     {

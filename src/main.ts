@@ -19,6 +19,6 @@ async function bootstrap() {
   });
 
   await app.listen(process.env.PORT);
-  console.log('🚀 Server started at http://127.0.0.1:' + process.env.PORT);
+  /* console.log('🚀 Server started at http://127.0.0.1:' + process.env.PORT); */
 }
 bootstrap();

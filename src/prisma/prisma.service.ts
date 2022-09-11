@@ -10,7 +10,8 @@ export class PrismaService
     super({
       datasources: {
         db: {
-          url: 'mysql://root:@localhost:3306/y-tsabo?schema=public',
+          //url: 'mysql://root:@localhost:3306/y-tsabo?schema=public',
+          url: 'mysql://root:MnW65rAAKRsKwrqBn5o8@containers-us-west-74.railway.app:6014/railway',
         },
       },
     });

@@ -14,7 +14,7 @@ import {
 import { RtGuard } from '../common/guards';
 import { AuthPatientService } from './auth-patient.service';
 import { AuthPatientDtoSignin, AuthPatientDtoSignup } from './dto';
-import { PatientTokens, Tokens } from './types';
+import { PatientTokens } from './types';
 
 @Controller('auth-patient')
 export class AuthPatientController {
@@ -30,7 +30,7 @@ export class AuthPatientController {
   @Public()
   @Post('local/signin')
   @HttpCode(HttpStatus.OK)
-  signinLocal(@Body() dto: AuthPatientDtoSignin): Promise<Tokens> {
+  signinLocal(@Body() dto: AuthPatientDtoSignin): Promise<PatientTokens> {
     return this.authService.signinLocal(dto);
   }
 

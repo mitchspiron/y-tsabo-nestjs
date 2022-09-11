@@ -43,7 +43,7 @@ export class AuthPatientService {
     return [newPatient, tokens];
   }
 
-  async signinLocal(dto: AuthPatientDtoSignin): Promise<Tokens> {
+  async signinLocal(dto: AuthPatientDtoSignin): Promise<PatientTokens> {
     const patient = await this.prisma.patient.findUnique({
       where: {
         emailPatient: dto.emailPatient,
@@ -64,7 +64,7 @@ export class AuthPatientService {
     );
     await this.updateRtHash(patient.idPatient, tokens.refresh_token);
 
-    return tokens;
+    return [patient, tokens];
   }
 
   async logout(idPatient: number) {

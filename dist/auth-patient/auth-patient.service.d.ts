@@ -7,7 +7,7 @@ export declare class AuthPatientService {
     private jwtService;
     constructor(prisma: PrismaService, jwtService: JwtService);
     signupLocal(dto: AuthPatientDtoSignup): Promise<PatientTokens>;
-    signinLocal(dto: AuthPatientDtoSignin): Promise<Tokens>;
+    signinLocal(dto: AuthPatientDtoSignin): Promise<PatientTokens>;
     logout(idPatient: number): Promise<void>;
     refreshTokens(idPatient: number, rt: string): Promise<Tokens>;
     updateRtHash(idPatient: number, rt: string): Promise<void>;

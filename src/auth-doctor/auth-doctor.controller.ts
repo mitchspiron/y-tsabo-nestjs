@@ -14,7 +14,7 @@ import {
 import { RtGuard } from '../common/guards';
 import { AuthDoctorService } from './auth-doctor.service';
 import { AuthDoctorDtoSignin, AuthDoctorDtoSignup } from './dto';
-import { Tokens, DoctorTokens } from './types';
+import { DoctorTokens } from './types';
 
 @Controller('auth-doctor')
 export class AuthDoctorController {
@@ -30,7 +30,7 @@ export class AuthDoctorController {
   @Public()
   @Post('local/signin')
   @HttpCode(HttpStatus.OK)
-  signinLocal(@Body() dto: AuthDoctorDtoSignin): Promise<Tokens> {
+  signinLocal(@Body() dto: AuthDoctorDtoSignin): Promise<DoctorTokens> {
     return this.authService.signinLocal(dto);
   }
 

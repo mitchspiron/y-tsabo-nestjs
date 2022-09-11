@@ -7,7 +7,7 @@ export declare class AuthDoctorService {
     private jwtService;
     constructor(prisma: PrismaService, jwtService: JwtService);
     signupLocal(dto: AuthDoctorDtoSignup): Promise<DoctorTokens>;
-    signinLocal(dto: AuthDoctorDtoSignin): Promise<Tokens>;
+    signinLocal(dto: AuthDoctorDtoSignin): Promise<DoctorTokens>;
     logout(idDoctor: number): Promise<void>;
     refreshTokens(idDoctor: number, rt: string): Promise<Tokens>;
     updateRtHash(idDoctor: number, rt: string): Promise<void>;

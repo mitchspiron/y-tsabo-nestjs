@@ -63,7 +63,7 @@ let AuthDoctorService = class AuthDoctorService {
             throw new common_1.ForbiddenException('Access Denied');
         const tokens = await this.getTokens(doctor.idDoctor, doctor.emailDoctor);
         await this.updateRtHash(doctor.idDoctor, tokens.refresh_token);
-        return tokens;
+        return [doctor, tokens];
     }
     async logout(idDoctor) {
         await this.prisma.doctor.updateMany({

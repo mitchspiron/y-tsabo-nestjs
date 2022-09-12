@@ -17,6 +17,13 @@ export declare class DoctorController {
         phoneDoctor: string;
         addressDoctor: string;
     }[]>;
+    getIdDoctors(): Promise<({
+        idDoctor: number;
+    }[] | {
+        lastnameDoctor: string;
+    }[] | {
+        firstnameDoctor: string;
+    }[])[]>;
     getPasswordDoctorById(id: number): Promise<DoctorPassword>;
     getDoctorById(id: number): Promise<Doctor>;
     updateDoctorById(id: number, dto: DoctorDto): Promise<Doctor>;

@@ -18,6 +18,13 @@ export declare class DoctorService {
         phoneDoctor: string;
         addressDoctor: string;
     }[]>;
+    getIdDoctors(): Promise<({
+        idDoctor: number;
+    }[] | {
+        lastnameDoctor: string;
+    }[] | {
+        firstnameDoctor: string;
+    }[])[]>;
     updateDoctorById(id: number, dto: DoctorDto): Promise<Doctor>;
     hashData(data: string): Promise<string>;
     getPasswordDoctorById(id: number): Promise<DoctorPassword | null>;

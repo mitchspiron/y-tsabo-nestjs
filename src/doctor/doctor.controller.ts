@@ -12,6 +12,11 @@ export class DoctorController {
     return await this.doctorService.getDoctors();
   }
 
+  @Get('doctor/id')
+  async getIdDoctors() {
+    return await this.doctorService.getIdDoctors();
+  }
+
   @Get('patient/password/:id')
   async getPasswordDoctorById(
     @Param('id') id: number,

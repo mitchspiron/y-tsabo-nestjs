@@ -25,7 +25,23 @@ let DoctorService = class DoctorService {
         });
     }
     async getDoctors() {
-        return await this.prisma.doctor.findMany();
+        return await this.prisma.doctor.findMany({
+            select: {
+                idDoctor: true,
+                matriculeDoctor: true,
+                lastnameDoctor: true,
+                firstnameDoctor: true,
+                emailDoctor: true,
+                phoneDoctor: true,
+                addressDoctor: true,
+                doctorspeciality: {
+                    select: {
+                        idSpeciality: true,
+                        nameSpeciality: true,
+                    },
+                },
+            },
+        });
     }
     async updateDoctorById(id, dto) {
         return await this.prisma.doctor.update({

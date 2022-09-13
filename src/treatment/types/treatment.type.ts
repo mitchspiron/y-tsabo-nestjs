@@ -4,6 +4,7 @@ export type Treatment = {
   patient: number;
   doctor: number;
   disease: number;
+  appointment: number;
   isTreated: boolean;
 };
 
@@ -12,4 +13,5 @@ export type TreatmentUpdate = {
   patient: number;
   doctor: number;
   disease: number;
+  appointment: number;
 };

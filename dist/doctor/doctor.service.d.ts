@@ -5,7 +5,26 @@ export declare class DoctorService {
     private prisma;
     constructor(prisma: PrismaService);
     getDoctorById(id: number): Promise<Doctor | null>;
-    getDoctors(): Promise<import(".prisma/client").doctor[]>;
+    getDoctors(): Promise<{
+        idDoctor: number;
+        firstnameDoctor: string;
+        lastnameDoctor: string;
+        doctorspeciality: {
+            nameSpeciality: string;
+            idSpeciality: number;
+        };
+        matriculeDoctor: string;
+        emailDoctor: string;
+        phoneDoctor: string;
+        addressDoctor: string;
+    }[]>;
+    getIdDoctors(): Promise<({
+        idDoctor: number;
+    }[] | {
+        lastnameDoctor: string;
+    }[] | {
+        firstnameDoctor: string;
+    }[])[]>;
     updateDoctorById(id: number, dto: DoctorDto): Promise<Doctor>;
     hashData(data: string): Promise<string>;
     getPasswordDoctorById(id: number): Promise<DoctorPassword | null>;

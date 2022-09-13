@@ -4,6 +4,7 @@ export declare type Treatment = {
     patient: number;
     doctor: number;
     disease: number;
+    appointment: number;
     isTreated: boolean;
 };
 export declare type TreatmentUpdate = {
@@ -11,4 +12,5 @@ export declare type TreatmentUpdate = {
     patient: number;
     doctor: number;
     disease: number;
+    appointment: number;
 };

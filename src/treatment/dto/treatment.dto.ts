@@ -9,4 +9,7 @@ export class TreatmentDto {
 
   @IsNotEmpty()
   disease: number;
+
+  @IsNotEmpty()
+  appointment: number;
 }

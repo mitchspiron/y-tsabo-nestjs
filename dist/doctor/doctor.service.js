@@ -25,7 +25,41 @@ let DoctorService = class DoctorService {
         });
     }
     async getDoctors() {
-        return await this.prisma.doctor.findMany();
+        return await this.prisma.doctor.findMany({
+            select: {
+                idDoctor: true,
+                matriculeDoctor: true,
+                lastnameDoctor: true,
+                firstnameDoctor: true,
+                emailDoctor: true,
+                phoneDoctor: true,
+                addressDoctor: true,
+                doctorspeciality: {
+                    select: {
+                        idSpeciality: true,
+                        nameSpeciality: true,
+                    },
+                },
+            },
+        });
+    }
+    async getIdDoctors() {
+        const idDoctor = await this.prisma.doctor.findMany({
+            select: {
+                idDoctor: true,
+            },
+        });
+        const lastnameDoctor = await this.prisma.doctor.findMany({
+            select: {
+                lastnameDoctor: true,
+            },
+        });
+        const firstnameDoctor = await this.prisma.doctor.findMany({
+            select: {
+                firstnameDoctor: true,
+            },
+        });
+        return [idDoctor, lastnameDoctor, firstnameDoctor];
     }
     async updateDoctorById(id, dto) {
         return await this.prisma.doctor.update({

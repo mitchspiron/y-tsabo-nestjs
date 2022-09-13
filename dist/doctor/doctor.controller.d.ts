@@ -4,7 +4,26 @@ import { Doctor, DoctorPassword } from './types';
 export declare class DoctorController {
     private readonly doctorService;
     constructor(doctorService: DoctorService);
-    getDoctors(): Promise<import(".prisma/client").doctor[]>;
+    getDoctors(): Promise<{
+        idDoctor: number;
+        firstnameDoctor: string;
+        lastnameDoctor: string;
+        doctorspeciality: {
+            nameSpeciality: string;
+            idSpeciality: number;
+        };
+        matriculeDoctor: string;
+        emailDoctor: string;
+        phoneDoctor: string;
+        addressDoctor: string;
+    }[]>;
+    getIdDoctors(): Promise<({
+        idDoctor: number;
+    }[] | {
+        lastnameDoctor: string;
+    }[] | {
+        firstnameDoctor: string;
+    }[])[]>;
     getPasswordDoctorById(id: number): Promise<DoctorPassword>;
     getDoctorById(id: number): Promise<Doctor>;
     updateDoctorById(id: number, dto: DoctorDto): Promise<Doctor>;

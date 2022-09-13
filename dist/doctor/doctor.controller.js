@@ -23,6 +23,9 @@ let DoctorController = class DoctorController {
     async getDoctors() {
         return await this.doctorService.getDoctors();
     }
+    async getIdDoctors() {
+        return await this.doctorService.getIdDoctors();
+    }
     async getPasswordDoctorById(id) {
         return await this.doctorService.getPasswordDoctorById(id);
     }
@@ -45,6 +48,12 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], DoctorController.prototype, "getDoctors", null);
+__decorate([
+    (0, common_1.Get)('doctor/id'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], DoctorController.prototype, "getIdDoctors", null);
 __decorate([
     (0, common_1.Get)('patient/password/:id'),
     __param(0, (0, common_1.Param)('id')),

@@ -6,14 +6,14 @@ export declare class DoctorService {
     constructor(prisma: PrismaService);
     getDoctorById(id: number): Promise<Doctor | null>;
     getDoctors(): Promise<{
+        idDoctor: number;
+        firstnameDoctor: string;
+        lastnameDoctor: string;
         doctorspeciality: {
             idSpeciality: number;
             nameSpeciality: string;
         };
-        idDoctor: number;
         matriculeDoctor: string;
-        lastnameDoctor: string;
-        firstnameDoctor: string;
         emailDoctor: string;
         phoneDoctor: string;
         addressDoctor: string;

@@ -5,14 +5,14 @@ export declare class DoctorController {
     private readonly doctorService;
     constructor(doctorService: DoctorService);
     getDoctors(): Promise<{
+        idDoctor: number;
+        firstnameDoctor: string;
+        lastnameDoctor: string;
         doctorspeciality: {
             idSpeciality: number;
             nameSpeciality: string;
         };
-        idDoctor: number;
         matriculeDoctor: string;
-        lastnameDoctor: string;
-        firstnameDoctor: string;
         emailDoctor: string;
         phoneDoctor: string;
         addressDoctor: string;

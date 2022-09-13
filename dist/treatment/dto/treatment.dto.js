@@ -25,5 +25,9 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", Number)
 ], TreatmentDto.prototype, "disease", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", Number)
+], TreatmentDto.prototype, "appointment", void 0);
 exports.TreatmentDto = TreatmentDto;
 //# sourceMappingURL=treatment.dto.js.map

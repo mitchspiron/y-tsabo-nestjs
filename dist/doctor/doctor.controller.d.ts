@@ -9,8 +9,8 @@ export declare class DoctorController {
         firstnameDoctor: string;
         lastnameDoctor: string;
         doctorspeciality: {
-            idSpeciality: number;
             nameSpeciality: string;
+            idSpeciality: number;
         };
         matriculeDoctor: string;
         emailDoctor: string;

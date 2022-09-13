@@ -10,8 +10,8 @@ export declare class DoctorService {
         firstnameDoctor: string;
         lastnameDoctor: string;
         doctorspeciality: {
-            idSpeciality: number;
             nameSpeciality: string;
+            idSpeciality: number;
         };
         matriculeDoctor: string;
         emailDoctor: string;

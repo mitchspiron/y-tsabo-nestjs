@@ -28,6 +28,7 @@ export class TreatmentService {
             nameDisease: true,
           },
         },
+        appointment: true,
         isTreated: true,
       },
     });
@@ -53,6 +54,7 @@ export class TreatmentService {
             nameDisease: true,
           },
         },
+        appointment: true,
         isTreated: true,
       },
     });
@@ -82,6 +84,7 @@ export class TreatmentService {
         patient: Number(dto.patient),
         doctor: Number(dto.doctor),
         disease: Number(dto.disease),
+        appointment: Number(dto.appointment),
         isTreated: false,
       },
     });
@@ -96,6 +99,7 @@ export class TreatmentService {
         patient: Number(dto.patient),
         doctor: Number(dto.doctor),
         disease: Number(dto.disease),
+        appointment: Number(dto.appointment),
       },
       where: {
         idTreatment: Number(id),

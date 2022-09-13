@@ -16,6 +16,7 @@ export declare class TreatmentController {
             idDisease: number;
             nameDisease: string;
         };
+        appointment: number;
         isTreated: boolean;
     }[]>;
     getTreatmentDoctorById(id: number): Promise<{
@@ -24,6 +25,7 @@ export declare class TreatmentController {
             idDisease: number;
             nameDisease: string;
         };
+        appointment: number;
         isTreated: boolean;
         patient_patientTotreatment: {
             idPatient: number;
